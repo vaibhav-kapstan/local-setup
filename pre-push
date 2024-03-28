@@ -9,7 +9,6 @@ check_for_do_not_push_commit() {
   for commit in $(git rev-list $branch); do
     # Check if the unwanted message is present
     msg=$(git log --pretty=oneline $commit)
-    echo $msg
     if [[ $msg == *$unwanted_pattern* ]]; then
       echo "Error: Push rejected! Commit '$commit' contains '$unwanted_pattern'."
       exit 1
