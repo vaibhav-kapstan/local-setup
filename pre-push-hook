@@ -1,0 +1,20 @@
+#!/bin/sh
+check_for_do_not_push_commit() {
+  # Get the commit message
+  message=$(git log  --oneline)
+
+  # Define the unwanted message pattern (replace 'UNWANTED_MESSAGE' with your actual pattern)
+  unwanted_pattern="DO NOT PUSH"
+
+  # Check if the unwanted message is present
+  if [[ $message =~ $unwanted_pattern ]]; then
+    echo "Error: Push rejected! Commit message contains '$unwanted_pattern'."
+    exit 1
+  fi
+
+  # Push can proceed if message is ok
+  exit 0
+}
+
+check_for_do_not_push_commit()
+
