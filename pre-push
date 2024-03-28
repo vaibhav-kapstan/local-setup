@@ -1,4 +1,5 @@
 #!/bin/sh
+
 check_for_do_not_push_commit() {
   # Define the unwanted message pattern (replace 'UNWANTED_MESSAGE' with your actual pattern)
   unwanted_pattern="DO NOT PUSH"
